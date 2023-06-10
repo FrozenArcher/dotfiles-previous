@@ -105,6 +105,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias n="nvim ."
+alias nv="nvim"
 alias sczsh="source ~/.zshrc"
 alias xon="export http_proxy=http://127.0.0.1:7890;export https_proxy=http://127.0.0.1:7890"
 alias xof="unset http_proxy https_proxy"

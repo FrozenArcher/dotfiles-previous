@@ -1,23 +1,22 @@
-userresources=$HOME/.my-xresources
+myresources=$HOME/.my-xresources
 external_display_name="HDMI-1-0"
 builtin_display_name="eDP-1"
 
 if [[ "$DESKTOP_SESSION" != "plasma" ]]; then
 	export QT_QPA_PLATFORMTHEME=qt5ct
-	if [[ "$DESKTOP_SESSION" == "awesome" ]]; then
-		if [[ "$(xrandr | grep $external_display_name | cut -d' ' -f2)" == "connected" ]]; then
-			xrandr --output $external_display_name --primary --auto --right-of $builtin_display_name
-		else
-			xrdb -merge $userresources
-		fi
+
+	if [[ "$(xrandr | grep $external_display_name | cut -d' ' -f2)" == "connected" ]]; then
+		xrandr --output $external_display_name --mode 2560x1440 --rate 144 --primary --right-of $builtin_display_name
 	elif [ -f $userresources ]; then
-		xrdb -merge $userresources
+		xrdb -merge $myresources
 	fi
 	
-	picom -b
+	$HOME/scripts/wmrc.sh
 fi
 
 export all_proxy="http://127.0.0.1:7890"
+export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
 
 # Input method
 export GTK_IM_MODULE=fcitx
