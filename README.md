@@ -34,7 +34,7 @@ Aborting
 ```
 
 please backup the conflict files, delete them and re-run the command:
-```
+```bash
 config checkout
 ```
 
@@ -43,7 +43,7 @@ config checkout
 ### Installing softwares:
 
 ```bash
-paru -S zsh awesome kitty xorg-xrandr picom-ftlabs-git ttf-jetbrains-mono-nerd ttf-lxgw-wenkai twemoji network-manager-applet udiskie blueman mate-power-manager xfce4-screensaver caffeine-ng pasystray fcitx5-im fcitx5-chinese-addons fcitx5-lua wget
+paru -S pavucontrol zsh awesome kitty xorg-xrandr picom-ftlabs-git ttf-jetbrains-mono-nerd ttf-lxgw-wenkai twemoji network-manager-applet udiskie blueman mate-power-manager xfce4-screensaver caffeine-ng pasystray fcitx5-im fcitx5-chinese-addons fcitx5-lua wget
 ```
 
 ### Installing oh-my-zsh:
