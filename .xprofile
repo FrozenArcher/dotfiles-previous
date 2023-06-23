@@ -1,15 +1,21 @@
-myresources=$HOME/.my-xresources
-external_display_name="HDMI-1-0"
-builtin_display_name="eDP-1"
+#!/bin/sh
+hidpi_resources=$HOME/.hidpi-xresources
+normal_resources=$HOME/.normal-xresources
+builtin_display="eDP-1-1"
+hdmi_display="HDMI-0"
 
 if [[ "$DESKTOP_SESSION" != "plasma" ]]; then
 	export QT_QPA_PLATFORMTHEME=qt5ct
 	export XCURSOR_SIZE=32
 
-	if [[ "$(xrandr | grep $external_display_name | cut -d' ' -f2)" == "connected" ]]; then
-		xrandr --output $external_display_name --mode 2560x1440 --rate 144 --primary --right-of $builtin_display_name
-	elif [ -f $userresources ]; then
-		xrdb -merge $myresources
+	if [[ "$(xrandr | grep $hdmi_display | cut -d' ' -f2)" == "connected" ]]; then
+        xrandr --output $hdmi_display --mode 2560x1440 --rate 144 --primary
+		xrandr --output $builtin_display --mode 2560x1440 --rate 165 --left-of $hdmi_display
+        if [ -f $normal_resources ]; then
+            xrdb -merge $normal_resources
+        fi
+	elif [ -f $hidpi_resources ]; then
+		xrdb -merge $hidpi_resources
 	fi
 	
 	$HOME/scripts/wmrc.sh
