@@ -18,7 +18,7 @@ if [[ "$DESKTOP_SESSION" != "plasma" ]]; then
 		xrdb -merge $hidpi_resources
 	fi
 	
-	$HOME/scripts/wmrc.sh
+	$HOME/scripts/wmrc.sh 1&>/dev/null 2&>~/.wmrc.log
 fi
 
 export all_proxy="http://127.0.0.1:7890"
