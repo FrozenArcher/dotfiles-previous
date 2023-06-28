@@ -18,7 +18,7 @@ Including:
 # set up the config alias and clone the repository
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 echo ".cfg" >> .gitignore
-git clone --bare git@github.com:FrozenArcher/arch-config.git $HOME/.cfg
+git clone --bare git@github.com:FrozenArcher/dotfiles.git $HOME/.cfg
 config config --local status.showUntrackedFiles no
 
 config checkout
@@ -43,7 +43,7 @@ config checkout
 ### Installing softwares:
 
 ```bash
-paru -S pavucontrol zsh awesome kitty xorg-xrandr picom-ftlabs-git ttf-jetbrains-mono-nerd ttf-lxgw-wenkai twemoji network-manager-applet udiskie blueman mate-power-manager xfce4-screensaver caffeine-ng pasystray fcitx5-im fcitx5-chinese-addons fcitx5-lua wget
+paru -S pavucontrol zsh awesome kitty xorg-xrandr picom-ftlabs-git ttf-jetbrains-mono-nerd ttf-lxgw-wenkai ttf-twemoji network-manager-applet udiskie blueman mate-power-manager xfce4-screensaver caffeine-ng pasystray fcitx5-im fcitx5-chinese-addons fcitx5-lua wget
 ```
 
 ### Installing oh-my-zsh:
