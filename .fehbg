@@ -1,4 +1,2 @@
 #!/bin/sh
-
-# ln -sf /path/to/wallpaper ~/.wallpaper
-feh --no-fehbg --bg-fill ~/.wallpaper
+feh --no-fehbg --bg-fill '/home/fracher/.wallpaper' 

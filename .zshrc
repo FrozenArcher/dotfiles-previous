@@ -36,6 +36,8 @@ else
 	export EDITOR='nvim'
 fi
 
+LS_CMD="lsd"
+
 # Aliases
 alias n="nvim ."
 alias nv="nvim"
@@ -51,3 +53,5 @@ alias gaa="git add ."
 alias gcm="git commit -m"
 alias gps="git push"
 alias cl="clear"
+alias ll="$LS_CMD -l"
+alias la="$LS_CMD -lA"

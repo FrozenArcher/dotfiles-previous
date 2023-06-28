@@ -17,10 +17,18 @@ if [[ "$DESKTOP_SESSION" != "plasma" ]]; then
 	elif [ -f $hidpi_resources ]; then
 		xrdb -merge $hidpi_resources
 	fi
+
+    if [[ "$DESKTOP_SESSION" != "awesome" ]]; then
+        feh --no-fehbg --bg-fill $HOME/.wallpaper
+    fi
 	
 	$HOME/scripts/wmrc.sh 1>/dev/null 2>~/.wmrc.log
 fi
 
+# PATH
+export PATH=$PATH:$HOME/.local/bin:$HOME/scripts/bin:$HOME/go/bin
+
+# proxy
 export all_proxy="http://127.0.0.1:7890"
 export http_proxy="http://127.0.0.1:7890"
 export https_proxy="http://127.0.0.1:7890"

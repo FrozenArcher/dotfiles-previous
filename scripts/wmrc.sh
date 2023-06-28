@@ -6,12 +6,6 @@ run() {
 	fi
 }
 
-if [[ "$DESKTOP_SESSION" != "awesome" ]]; then
-	if [ -f "~/.fehbg" ]; then
-		~/.fehbg
-	fi
-fi
-
 # polkit
 _polkit=/usr/lib/polkit-kde-authentication-agent-1
 if [ -f $_polkit ]; then
